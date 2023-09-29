@@ -1,0 +1,366 @@
+/* dezain bazeia ba website starbucks no rosela coffe*/
+:root{
+    --bg: rgb(74, 74, 74);
+    --st: #BBF3D2;
+    --nd:  #D39747;
+    --rd: #BA7E2D;
+    --clr:#3c3c3c;
+    --clr-nd: #D39747;
+    font-size: 14px;
+    /* scroll-behavior: smooth; */
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{   
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: #fff;
+}
+body section,
+body main{
+    margin-bottom: 8rem;
+}
+.container{
+    display: grid;
+}
+
+/* header hahu */
+header{
+    position: fixed;
+    z-index: 100;
+    background-color: var(--st);
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+header .logo{
+    flex: 2;
+    display: grid;
+    place-content: center;
+}
+
+/* > navbar */
+header .navbar{
+    display: flex;
+    align-items: center;
+    flex: 3;
+}
+.navbar .navigation{
+    flex: 2;
+}
+.navbar .navigation .nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation .nav-list li{
+    position: relative;
+}
+.navigation .nav-list li a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--clr);
+    padding: .5rem 1rem;
+}
+.navigation ul li:hover a{
+    color: var(--nd);
+}
+/* > navbar end*/
+
+header .shop{
+    flex: 1;
+    display: grid;
+    place-content: center;
+}
+header .shop img{
+    width: 30px;
+}
+
+/* > ul > sub-menu */
+.navigation .nav-list li ul.submenu{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: max-content;
+    padding: 1.2rem;
+    background-color: rgba(122, 122, 122, .7);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translatey(0);
+    z-index: 99;
+    transition: all 200ms linear;
+}
+.nav-list li .submenu li a{
+    color: #fff;
+}
+.navigation .nav-list li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translatey(1rem);
+}
+li .submenu li a:hover{
+    color: var(--clr-nd);
+}
+
+/* hero section strar */
+.hero{
+    width: 100%;
+    height: 70vh;
+    margin-top: 110px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    background: url('../image/coffee-beans-top-view-white-background-space-text.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    -webkit-mask-image: linear-gradient(rgba(74, 74, 74, 1) 90%, rgba(74, 74, 74, 0));
+    mask-image: linear-gradient(rgba(74, 74, 74, 1) 90%, rgba(74, 74, 74, 0));
+}
+.hero .hero-content{
+    padding: 2rem;
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: #00000017;
+    width: 80vw;
+    color: var(--clr);
+    text-align: justi fy;
+    box-shadow: 0 0 3px var(--bg);
+}
+.hero .hero-content button{
+    padding-block: .5rem;
+    width: 50%;
+    opacity: .8;
+    outline: none;
+    border: none;
+}
+/* hero section end */
+
+/* main star*/
+main{
+    padding: 2rem 1rem 1rem 1rem;
+    gap: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+main img{
+    max-height: 40vh;
+    box-shadow: 0 0 4px 1px var(--nd), -1px 1px 3px #fff;
+}
+
+main .main-content{
+    width: 400px;
+    align-self: flex-start;
+}
+main .main-content h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+main .main-content p{
+    text-align: justify;
+    line-height: 1.5rem;
+}
+main .main-content button{
+    margin-top: 1rem;
+    padding: 5px 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    outline: none;
+    border: none;
+}
+.main-content button a{
+    text-decoration: none;
+    color: var(--nd);
+}
+.main-content button:hover{
+    background-color: rgb(255, 255, 255);
+}
+/* main section end */
+
+/* produtu section star */
+.produtos{
+    padding-inline: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 1fr);
+}
+.produtos .produto{
+    display: flex;
+    min-height: 50vh;
+}
+.produto .produto-des{
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    place-content: center;
+    line-height: 1.5rem;
+}
+.produto .produto-des h2{
+    text-transform: capitalize;
+    text-align: center;
+}
+.produto .produto-des a{
+    width: 100px;
+    height: 30px;
+    justify-self: center;
+    text-decoration: none;
+    background-color: var(--nd);
+    color: #fff;
+    text-align: center;
+    padding: 5px 1rem;
+    margin-top: 1rem;
+    outline: 2px solid var(--nd);
+    transition: all 80ms linear;
+}
+.produto .produto-des a:hover{
+    scale: .9;
+    outline-offset: 2px;
+    outline: 2px solid var(--nd);
+    transition: all 80ms linear;
+}
+
+.produto .produto-img{
+    width: 70%;
+    height: auto;
+    background-image: url("../image/product-kopi.jpg");
+    background-position: center;
+    background-size: cover;
+/* produtu setion end */
+
+/* menu-cards section star */    
+}
+.menu-cards{
+    width: calc(100vw - 20%);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    gap: 2rem;
+}
+
+.menu-cards h1{
+    text-align: center;
+}
+.menu-box .menu-coffe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.menu-box img{
+    width: 150px;
+    border-radius: 50%;
+}
+.menu-coffe .menu details{
+    text-align: center;
+    position: relative;
+}
+.menu details summary::marker{
+    content: '';
+}
+details summary h3{
+    padding: 1rem;
+}
+.menu details p {
+    padding: 1rem;
+    position: absolute;
+    width: 200px;
+    top: 25px;
+    left: 105px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px black;
+    color: var(--clr-nd);
+    border-radius: 0 10px 10px 10px;
+}
+/* menu-cards section end */
+
+/* footer star */
+footer{
+    width: 100%;
+    padding-inline: 3.5rem  2rem;
+    padding-block: 2rem 3rem;
+    background: white;
+}footer .menu-nav{
+    max-width: 600px;
+    list-style: none;
+}
+footer .menu-nav .main-list a.main-link{
+    color:var(--clr);
+    opacity: 1;
+}
+footer .menu-nav .main-list a.main-link:hover{
+    color: var(--rd);
+}
+footer .menu-nav a{
+    text-decoration: none;
+    color: var(--clr);
+    opacity: .7;
+}
+footer ul li a:hover{
+    color: var(--rd);
+}
+footer .menu-nav .main-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.menu-nav ul li ul{
+    display: flex;
+    flex-direction: column;
+}
+.menu-nav ul li ul li{
+    padding: .5rem;
+}
+footer .feather-icon{
+    padding-block: 1rem 10px;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .copyright{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-block: 1rem;
+    color: var(--clr);
+}
+footer .copyright P{
+    word-spacing: 8px;
+    letter-spacing: 3px;
+}
+footer .copyright P span{
+    color: var(--clr-nd);
+}
+
+/* footer end */
+
+/* media query breackpoint */
+@media only screen and (min-width: 768px){
+    .hero .hero-content{
+        width: 400px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .hero{
+        background-position-y: -12vw;
+        }
+        .produtos{
+            grid-template-columns: repeat(2, 1fr);
+        }
+}
